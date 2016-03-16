@@ -1,0 +1,6 @@
+framework module AWSwizzle {
+  umbrella header "AWSwizzle-umbrella.h"
+
+  export *
+  module * { export * }
+}

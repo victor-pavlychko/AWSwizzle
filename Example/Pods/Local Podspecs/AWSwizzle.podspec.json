@@ -1,0 +1,25 @@
+{
+  "name": "AWSwizzle",
+  "version": "0.1.0",
+  "summary": "A short description of AWSwizzle.",
+  "description": "",
+  "homepage": "https://github.com/<GITHUB_USERNAME>/AWSwizzle",
+  "license": "MIT",
+  "authors": {
+    "Victor Pavlychko": "victor.pavlychko@gmail.com"
+  },
+  "source": {
+    "git": "https://github.com/<GITHUB_USERNAME>/AWSwizzle.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "7.0"
+  },
+  "requires_arc": true,
+  "source_files": "Pod/Classes/**/*",
+  "resource_bundles": {
+    "AWSwizzle": [
+      "Pod/Assets/*.png"
+    ]
+  }
+}
