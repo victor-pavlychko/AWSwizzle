@@ -11,11 +11,15 @@ __BEGIN_DECLS
 
 NS_ASSUME_NONNULL_BEGIN
 
+#pragma mark - Accessing original implementation -
+
 /*!
  * Autodetect proxy to invoke next implementation
  */
-#define awSwizzleNext \
+#define awSwizzleSuper \
     ((__typeof(self))_awSwizzleProxy_find(self, _cmd, ({ __AW_ ## __LINE__: ; &&__AW_ ## __LINE__; })))
+
+#pragma mark - Hooking API -
 
 @interface NSObject (AWSwizzle)
 
@@ -79,6 +83,8 @@ NS_ASSUME_NONNULL_BEGIN
                 withFunction:(IMP)replacementImp;
 
 @end
+
+#pragma mark - Retrieving original accessor proxy -
 
 /*!
     Retrieves proxy to call next implementation

@@ -6,43 +6,21 @@
 //  Copyright (c) 2016 Victor Pavlychko. All rights reserved.
 //
 
+@import AWSwizzle;
+
 // https://github.com/Specta/Specta
 
 SpecBegin(InitialSpecs)
 
-describe(@"these will fail", ^{
+describe(@"static swizzling with category", ^{
+    
+    it(@"can swizzle description", ^{
+        NSObject *obj = [[NSObject alloc] init];
+        NSString *str = [obj description];
+        expect(str).to.beginWith(@"swizzled >>> ");
+        expect(str).to.endWith(@" <<< swizzled");
+    });
 
-    it(@"can do maths", ^{
-        expect(1).to.equal(2);
-    });
-
-    it(@"can read", ^{
-        expect(@"number").to.equal(@"string");
-    });
-    
-    it(@"will wait for 10 seconds and fail", ^{
-        waitUntil(^(DoneCallback done) {
-        
-        });
-    });
-});
-
-describe(@"these will pass", ^{
-    
-    it(@"can do maths", ^{
-        expect(1).beLessThan(23);
-    });
-    
-    it(@"can read", ^{
-        expect(@"team").toNot.contain(@"I");
-    });
-    
-    it(@"will wait and succeed", ^{
-        waitUntil(^(DoneCallback done) {
-            done();
-        });
-    });
 });
 
 SpecEnd
-

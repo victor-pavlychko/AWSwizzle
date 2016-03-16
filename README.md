@@ -9,6 +9,24 @@
 
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
 
+```objc
+@import AWSwizzle;
+
+@implementation NSObject (AWSwizzleTest)
+
++ (void)load
+{
+    [self aw_swizzleWithPrefix:"awSwizzleTest_"];
+}
+
+- (NSString *)awSwizzleTest_description
+{
+    [NSString stringWithFormat:@"swizzled >>> %@ <<< swizzled", [awSwizzleSuper description]];
+}
+
+@end
+```
+
 ## Requirements
 
 ## Installation

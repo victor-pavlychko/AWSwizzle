@@ -246,7 +246,7 @@ id _Nullable _awSwizzleProxy_find(id self_, SEL selector_, void *pc)
 
     _swizzleInfoMap()->emplace((uintptr_t)replacementImp, result);
 
-    return (void*)replacementImp;
+    return (void *)replacementImp;
 }
 
 @end

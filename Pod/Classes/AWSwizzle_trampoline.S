@@ -19,7 +19,7 @@
 //     struct objc_super   super_;          // self + 4 |     16 |     32
 // };
 
-#if defined(__arm__)
+#if defined(__arm__)                        // MARK: - ARM 32-bit -
 
 // argument order:  [stret],    self,    _cmd, ...
 // regular layout:      N/A,      r0,      r1, ...
@@ -39,7 +39,7 @@ __awSwizzleProxy_trampoline_stret:
     ldr     r12,        [r12, #4]           // load target function
     bx      r12                             // jump to destination
 
-#elif defined(__arm64__)
+#elif defined(__arm64__)                    // MARK: - ARM 64-bit -
 
 // argument order:  [stret],    self,    _cmd, ...
 // regular layout:      N/A,      x0,      x1, ...
@@ -59,7 +59,7 @@ __awSwizzleProxy_trampoline_stret:
     ldr     x12,        [x12, #8]           // load target function
     br      x12                             // jump to destination
 
-#elif defined(__i386__)
+#elif defined(__i386__)                     // MARK: - x86 32-bit -
 
 // argument order:  [stret],    self,    _cmd, ...
 // regular layout:      N/A,   esp+4,   esp+8, ...
@@ -81,7 +81,7 @@ __awSwizzleProxy_trampoline_stret:
     movl    %ebx,       12(%esp)            // store target `_cmd`
     jmpl    *4(%eax)                        // jump to destination
 
-#elif defined(__x86_64__)
+#elif defined(__x86_64__)                   // MARK: - x86 64-bit -
 
 // argument order:  [stret],    self,    _cmd, ...
 // regular layout:      N/A,     rdi,     rsi, ...

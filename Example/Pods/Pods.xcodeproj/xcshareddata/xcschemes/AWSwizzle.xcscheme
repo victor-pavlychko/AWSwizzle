@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = 'FBD5119BF540614FD9C078F0'
+               BlueprintIdentifier = '20FA5B265B7932EAF8B01500'
                BlueprintName = 'AWSwizzle'
                ReferencedContainer = 'container:Pods.xcodeproj'
                BuildableName = 'AWSwizzle.framework'>
